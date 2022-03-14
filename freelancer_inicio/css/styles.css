@@ -1,0 +1,281 @@
+:root{
+
+    --blanco:#ffffff;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --oscuro: rgb(0,0,0);
+    --gris-claro: #DFE9F3;
+
+}
+/*Globales*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*Hack Box Model*/
+    /*.scroll-snap-type: y mandatory; /*scroll hacia abajao (eje y)*/
+}
+
+/*.navegacion-principal, .servicios, .formulario{
+    scroll-snap-align: center; /*Para que se detenga en servicios al hacer scroll hacia abajo
+    scroll-snap-stop: always;  
+} */
+
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px;
+    background-image: linear-gradient(to top, var(--gris-claro) 0%, var(--blanco) 100%); /*Degradado fondo de la pagina*/
+
+}
+
+/*Tipografía*/
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 7px rgba(99,99,99,0.41);
+    -moz-box-shadow: 0px 5px 15px 7px rgba(99,99,99,0.41);
+    box-shadow: 0px 5px 15px 7px rgba(99,99,99,0.41);
+    background-color: var(--blanco);
+    padding: 2rem; /*De dentro hacia fuera*/
+    border-radius: 1rem; /*Esquinas redondeadas*/
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-transform:uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+.boton:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 480px) {
+   .boton{
+       width:auto;
+   }
+}
+/* 1 rem = 10px*/
+.Titulo{
+    /*text-align: center; /*Alineación del texto*/
+    /*font-size: var(--fuente-principal); /*pixeles de la letra*/
+    font-family: 'Krub', sans-serif; /*tipo de letra*/
+    font-weight: 700; /*Ancho de letra*/
+}
+
+.Titulo span{
+    font-size: 2rem;
+}
+
+.contenedor{
+    max-width: 120rem; /*Largo del objeto donde se aplique*/
+    margin: 0 auto 0 auto; /*top right left bottom*/
+}
+
+.nav-background{
+    background-color: var(--secundario); /*Color de Fondo de la navegación*/
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /*mover el contenido horizontalmente*/
+    align-items: center; /*mover el contenido verticalmente*/
+}
+
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem; /*top right bottom left*/
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/*Media Queries (adaptarse a diferentes dispositivos)*/
+
+@media (min-width: 480px) { /*480px:celular 768px:table 1140px:laptop/compu de escritorio*/
+   .navegacion-principal{
+       flex-direction:row
+   }
+}
+
+.hero {
+    background-image: url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 410px;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0; /*Coordeanadas del fondo aplicado*/
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,.contenido-hero p{
+    color: var(--blanco);
+}
+
+/*MIS SERVICIOS*/
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%; /* 1fr 1fr 1fr (Es lo mismo)*/ /*repeat(3, 1fr)*/
+        column-gap: 1rem; /*Separación de Columnas*/
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.servicio p{
+    line-height: 2; /*Interlineado*/
+    text-align: center;
+}
+.servicio h3{
+    color: var(--secundario); /*color de letra*/
+    font-weight: normal;
+
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: #FFC107;
+    border-radius: 50%; /*si se tiene un cuadrado perfecto con 50% se hace un circulo perfecto*/
+    display: flex;
+    align-items: center; /*centrar de arriba a abajo*/
+    justify-content: space-evenly;
+
+}
+
+
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /*Compara que valor es mas pequeño y lo asigna*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    
+}
+/*CONTACTO*/
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+/*FORMULARIO*/
+
+@media (min-width: 768px) {
+
+    .contenedor-campos{
+    
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem ;
+        column-gap: 1rem;
+    }
+
+    .campo:nth-child(3), .campo:nth-child(4){
+        grid-column: 1 / 3; /*Posicionar elemento de grid*/
+    }
+   
+}
+
+
+.campo{
+    margin-bottom: 1rem;
+
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    display: block; /*Funciona como salto de línea*/
+    margin-bottom: 0.5rem;
+
+}
+
+.input-caja{
+    width: 100%;
+    border: none;
+    padding: 1.5rem; /*El padding Añade espacio a los extremos */
+    border-radius: 0.5rem;
+}
+
+.enviar .boton{
+    width: 100%;
+}
+
+.enviar{
+    display: flex;
+}
+
+@media (min-width: 768px) {
+
+    .enviar .boton{
+        width: auto;
+    }
+    .enviar{
+        justify-content: flex-end;
+        margin-top: 3rem;
+        margin-bottom: -1rem;
+    }
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+.footer{
+    text-align: center;
+}

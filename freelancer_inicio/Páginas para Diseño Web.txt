@@ -1,0 +1,5 @@
+#Degradado para fondos
+https://www.cssmatic.com/gradient-generator
+
+#Hosting
+https://www.netlify.com/
